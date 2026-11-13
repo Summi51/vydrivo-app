@@ -24,13 +24,6 @@ const MODES = [
     placeholder: 'e.g. Tease the one feature that turns a rough note into a reviewed, finished vertical video without rebuilding the whole project.',
   },
   {
-    id: 'feature-walkthrough',
-    label: 'Feature Walkthrough',
-    short: 'Walkthrough',
-    icon: 'view_carousel',
-    placeholder: 'e.g. Walk through scene revision: change one scene card, keep the narration and captions, and render only that shot again.',
-  },
-  {
     id: 'social-reel',
     label: 'Social Reel (9:16)',
     short: 'Reel',
