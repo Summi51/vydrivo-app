@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        # Amplify console variables are available to the build shell, not to the
+        # Next.js server runtime. Write the names Next.js needs into
+        # .env.production before the build so SSR can read them. Values stay in
+        # Amplify; this file never contains secrets.
+        - env | grep -e '^SUPABASE_URL=' -e '^SUPABASE_PUBLISHABLE_KEY=' -e '^SUPABASE_GOOGLE_ENABLED=' >> .env.production
+        - env | grep -e '^NEXT_PUBLIC_' >> .env.production
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
