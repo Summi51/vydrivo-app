@@ -18,7 +18,6 @@ function SceneRow({ scene, index }) {
       </div>
       <h3 className="mt-1.5 font-headline text-sm font-bold tracking-[-0.02em] text-[#2A1728]">{scene.title}</h3>
       <p className="mt-1.5 text-[11px] leading-5 text-[#5E5A64]">{scene.narration}</p>
-      {scene.visualPrompt ? <p className="mt-1.5 text-[10px] leading-4 text-[#A8A5AD]">Visual: {scene.visualPrompt}</p> : null}
     </article>
   );
 }
@@ -63,7 +62,7 @@ export default function StoryboardDraft({ topic, projectId, signedIn }) {
       const saved = { ...board, review: data.review };
       saveStoryboard(window.sessionStorage, saved, projectId);
       setBoard(saved);
-      setStatus('This exact draft is approved. Video generation is still not connected.');
+      setStatus('This exact draft is approved.');
     } catch (requestError) {
       setError(requestError.message);
     } finally {
@@ -130,10 +129,9 @@ export default function StoryboardDraft({ topic, projectId, signedIn }) {
           </button>
         </div>
       ) : (
-        <div className="mt-4 flex items-center gap-3 rounded-xl border border-dashed border-[#DDD9E1] bg-[#FAFAFB] px-3.5 py-3">
-          <span className="material-symbols-outlined text-[20px] text-[#B8B5BC]" aria-hidden="true">account_tree</span>
-          <p className="text-[11px] leading-5 text-[#8A8790]">No storyboard draft in this tab yet. The brief above is the input.</p>
-        </div>
+        <p className="mt-4 rounded-xl border border-dashed border-[#DDD9E1] bg-[#FAFAFB] px-3.5 py-3 text-[11px] leading-5 text-[#8A8790]">
+          No storyboard draft in this tab yet.
+        </p>
       )}
     </section>
   );
