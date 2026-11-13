@@ -1,9 +1,3 @@
-function sceneIssue(scene) {
-  if (!String(scene.narration || '').trim()) return 'Needs narration';
-  if (!String(scene.visualPrompt || '').trim()) return 'Needs visual intent';
-  return '';
-}
-
 export default function SceneRail({ scenes, selectedId, onSelect, onAdd }) {
   return (
     <aside
@@ -32,7 +26,6 @@ export default function SceneRail({ scenes, selectedId, onSelect, onAdd }) {
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1 xl:flex-col xl:overflow-visible xl:pb-0">
           {scenes.map((scene, index) => {
             const active = scene.id === selectedId;
-            const issue = sceneIssue(scene);
             return (
               <button
                 key={scene.id}
@@ -60,17 +53,7 @@ export default function SceneRail({ scenes, selectedId, onSelect, onAdd }) {
                 <p className={`mt-2 line-clamp-2 text-[14px] font-semibold leading-5 ${active ? 'text-[#F5F5F7]' : 'text-[#9A9AA5]'}`}>
                   {scene.title || `Scene ${index + 1}`}
                 </p>
-                <div className="mt-1 flex items-center justify-between gap-2">
-                  <span className="font-mono text-[12px] text-[#8A8A96]">{scene.estimatedSeconds || 0}s</span>
-                  {issue ? (
-                    <span className="inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.08em] text-[#FBBF24]" title={issue}>
-                      <span className="h-1 w-1 rounded-full bg-[#FBBF24]" aria-hidden="true" />
-                      {issue === 'Needs narration' ? 'No script' : 'No visual'}
-                    </span>
-                  ) : (
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#34D399]" title="Scene has narration and visual intent" aria-hidden="true" />
-                  )}
-                </div>
+                <p className="mt-1 font-mono text-[12px] text-[#8A8A96]">{scene.estimatedSeconds || 0}s</p>
               </button>
             );
           })}
