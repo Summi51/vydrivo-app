@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+  --vydrivo-bg: #0B0B0F;
+  --vydrivo-surface: #141419;
+  --vydrivo-raised: #1B1B22;
+  --vydrivo-border: #26262E;
+  --vydrivo-text: #F5F5F7;
+  --vydrivo-muted: #9A9AA5;
+  --vydrivo-accent: #8B5CF6;
+  --vydrivo-accent-strong: #7C3AED;
+  --vydrivo-success: #34D399;
+  --vydrivo-warning: #FBBF24;
+  --vydrivo-error: #F87171;
+}
+
+.vydrivo-landing {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  color: var(--vydrivo-text);
+  background: var(--vydrivo-bg);
+}
+
+.vydrivo-landing h1,
+.vydrivo-landing h2,
+.vydrivo-landing h3,
+.vydrivo-landing h4 {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+}
+
+.landing-hero-fallback {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(139, 92, 246, 0.2), transparent 32%),
+    radial-gradient(circle at 82% 18%, rgba(45, 212, 191, 0.09), transparent 30%),
+    radial-gradient(circle at 70% 78%, rgba(124, 58, 237, 0.16), transparent 36%),
+    #0B0B0F;
+}
+
+/*
+ * Keeps the hero explainer card fully visible in the first viewport.
+ * Card height = 9:16 video + 94px chrome; on lg the card starts below the
+ * 65px nav and 96px hero padding, so cap the width to the space left.
+ */
+.hero-explainer-card {
+  max-width: 300px;
+}
+
+@media (min-width: 1024px) {
+  .hero-explainer-card {
+    max-width: min(300px, calc((100svh - 267px) * 0.5625 + 26px));
+  }
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0B0B0C;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-landing {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+}
+
+.vydrivo-studio {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  background:
+    radial-gradient(70rem 32rem at 12% -8%, rgba(139, 92, 246, 0.13), transparent 68%),
+    radial-gradient(46rem 28rem at 92% -4%, rgba(45, 212, 191, 0.06), transparent 72%),
+    #0B0B0F;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+ * Purple ambient for the Video, Videos, Projects and Scene text pages only.
+ * Mirrors the home composer card: violet radial at the top-left, faint teal at
+ * the bottom-right, a purple-black base and the same subtle white dot grid
+ * masked from the top-left. Home and the other studio pages keep the plain
+ * .vydrivo-studio backdrop.
+ */
+.vydrivo-studio.studio-purple-page {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(84rem 52rem at 12% -12%, rgba(139, 92, 246, 0.3), transparent 64%),
+    radial-gradient(64rem 42rem at 100% 6%, rgba(124, 58, 237, 0.2), transparent 66%),
+    radial-gradient(60rem 40rem at 50% 120%, rgba(45, 212, 191, 0.08), transparent 60%),
+    linear-gradient(165deg, #1F1231 0%, #171021 40%, #110C1A 70%, #0B0B0F 100%);
+}
+
+.vydrivo-studio.studio-purple-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  opacity: 0.14;
+  -webkit-mask-image: radial-gradient(ellipse at top left, black 14%, transparent 85%);
+  mask-image: radial-gradient(ellipse at top left, black 14%, transparent 85%);
+}
+
+.studio-surface {
+  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.026), rgba(255, 255, 255, 0) 42%);
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+.tracking-tighter-headline {
+  letter-spacing: -0.04em;
+}
+
+.tracking-tight-heading {
+  letter-spacing: -0.03em;
+}
+
+.hero-sunset-glow {
+  background: radial-gradient(circle at 75% 30%, rgba(217, 70, 239, 0.28) 0%, rgba(240, 131, 158, 0.20) 35%, rgba(124, 58, 237, 0.14) 60%, transparent 80%);
+}
+
+@keyframes pulseWave {
+  0%, 100% { height: 8px; }
+  50% { height: 24px; }
+}
+
+.waveform-bar {
+  animation: pulseWave 1.3s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-shimmer-text {
+  background-size: 200% auto;
+  animation: textShimmer 4s ease infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pipelineBeam {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-pipeline-beam {
+  animation: pipelineBeam 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes vydrivoReelDrift {
+  0% { transform: translateY(-2%); }
+  100% { transform: translateY(-10%); }
+}
+
+.vydrivo-reel-column {
+  animation: vydrivoReelDrift 24s ease-in-out infinite alternate;
+}
+
+.vydrivo-reel-column-slow {
+  animation-duration: 30s;
+  animation-direction: alternate-reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vydrivo-reel-column {
+    animation: none;
+  }
+}
