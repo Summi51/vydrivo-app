@@ -14,9 +14,6 @@ export default function ConflictNotice({ conflict, onReload, onKeep, busy = fals
             <span className="material-symbols-outlined text-[16px]" aria-hidden="true">sync_problem</span>
             This project changed somewhere else
           </p>
-          <p className="mt-1 text-[13px] leading-5 text-[#D6C48A]">
-            Another tab or device saved a newer version. Reload it, or save your edits over that version.
-          </p>
         </div>
         <div className="flex shrink-0 flex-wrap items-center gap-2">
           <button
