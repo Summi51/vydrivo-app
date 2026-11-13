@@ -1,7 +1,6 @@
 export const MODE_THEMES = {
   'talking-head': 'from-[#4C1D95] via-[#6D28D9] to-[#111827]',
   'product-teaser': 'from-[#312E81] via-[#4338CA] to-[#0B0B0F]',
-  'feature-walkthrough': 'from-[#064E3B] via-[#0F766E] to-[#0B0B0F]',
   'social-reel': 'from-[#4C1D95] via-[#7C3AED] to-[#1E1B4B]',
 };
 
@@ -9,9 +8,6 @@ const TONES = {
   draft: 'bg-[#FBBF24]/15 text-[#FCD34D] ring-1 ring-inset ring-[#FBBF24]/30',
   planning: 'bg-[#8B5CF6]/20 text-[#DDD6FE] ring-1 ring-inset ring-[#8B5CF6]/40',
   approved: 'bg-[#34D399]/15 text-[#6EE7B7] ring-1 ring-inset ring-[#34D399]/30',
-  generating: 'bg-[#8B5CF6]/20 text-[#DDD6FE] ring-1 ring-inset ring-[#8B5CF6]/40',
-  ready: 'bg-[#34D399]/15 text-[#6EE7B7] ring-1 ring-inset ring-[#34D399]/30',
-  failed: 'bg-[#F87171]/15 text-[#FCA5A5] ring-1 ring-inset ring-[#F87171]/30',
 };
 
 export default function ProjectThumb({
