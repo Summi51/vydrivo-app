@@ -56,7 +56,6 @@ Projects
 - Next.js 16 and React 19
 - Supabase Auth and Postgres for signed-in projects
 - AWS Amplify for the live app
-- Remotion for motion-graphics compositions
 
 ## Local
 
@@ -79,13 +78,9 @@ app/            pages and API routes
 components/     landing, auth and studio UI
 lib/            session, projects and public helpers
 lib/pipeline/   public interfaces for private services
-remotion/       composition entry
 supabase/       owner-scoped project migrations
 public/portfolio  product screenshots
 ```
-
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the boundary between this
-repository and the private services.
 
 ## Notes
 
