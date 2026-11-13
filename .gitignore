@@ -6,10 +6,6 @@ prototype/output/
 prototype/private/
 .DS_Store
 
-# Private local render inputs; never deploy this directory.
-remotion/public/media/
-remotion/public/*.mp3
-remotion/public/*.mp4
 public/videos/
 public/*.mp4
 public/*.webm
