@@ -22,21 +22,18 @@ const STEPS = [
     label: 'Step 01',
     title: 'Describe your idea',
     body: 'Type a premise, lesson, or rough notes. Vydrivo shapes the story around the point you want to make.',
-    tag: 'Start with a topic',
   },
   {
     icon: 'dashboard_customize',
     label: 'Step 02',
     title: 'Review the storyboard',
     body: 'Check pacing, visuals, and narration before rendering. Change any scene before it renders.',
-    tag: 'Approve the plan',
   },
   {
     icon: 'movie',
     label: 'Step 03',
     title: 'Render and export',
     body: 'Render the approved storyboard with diagrams, Hindi voice and Hinglish captions, then export a 60–90 second vertical MP4.',
-    tag: '1080 × 1920 · 30 fps',
   },
 ];
 
@@ -377,7 +374,6 @@ export default function Home() {
                 </div>
                 <h3 className="mt-5 font-landing text-lg font-semibold tracking-[-0.02em] text-white">{step.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[#9A9AA5]">{step.body}</p>
-                <span className="mt-4 inline-flex rounded-full border border-[#2B2B35] bg-[#0F0F14] px-2.5 py-1 font-mono text-[8px] uppercase tracking-[0.12em] text-[#A1A1AA]">{step.tag}</span>
               </article>
             ))}
           </div>
