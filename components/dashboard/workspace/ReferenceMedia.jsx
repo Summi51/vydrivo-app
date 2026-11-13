@@ -9,22 +9,6 @@ import {
   uploadReferenceFile,
 } from '../../../lib/media-client.js';
 import { formatMediaBytes, MEDIA_ACCEPT } from '../../../lib/media-rules.js';
-import { REFERENCE_FILE_HINT } from '../../../lib/media-upload.js';
-
-function StatusBadge({ asset }) {
-  if (asset.status === 'validated') {
-    return (
-      <span className="rounded-full border border-[#34D399]/35 bg-[#34D399]/10 px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.1em] text-[#6EE7B7]">
-        Ready
-      </span>
-    );
-  }
-  return (
-    <span className="rounded-full border border-[#FBBF24]/35 bg-[#FBBF24]/10 px-2 py-0.5 font-mono text-[11px] uppercase tracking-[0.1em] text-[#FBBF24]">
-      Waiting
-    </span>
-  );
-}
 
 export default function ReferenceMedia({ projectId }) {
   const [assets, setAssets] = useState([]);
@@ -214,7 +198,7 @@ export default function ReferenceMedia({ projectId }) {
       </div>
 
       <p className="mt-2 text-[12px] leading-5 text-[#8A8A96]">
-        {REFERENCE_FILE_HINT} References are saved for later scene work; footage generation does not use them yet.
+        PNG, JPEG, WebP or MP4. Footage generation does not use these yet.
       </p>
 
       {limitBytes ? (
@@ -298,7 +282,6 @@ export default function ReferenceMedia({ projectId }) {
                     <p className="min-w-0 flex-1 truncate text-[13px] font-semibold text-[#F5F5F7]" title={asset.filename}>
                       {asset.filename}
                     </p>
-                    <StatusBadge asset={asset} />
                   </div>
                   <p className="mt-1 text-[12px] text-[#777781]">
                     {formatMediaBytes(asset.bytes || asset.declaredBytes)} · {asset.mime}
