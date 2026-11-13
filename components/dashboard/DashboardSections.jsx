@@ -10,7 +10,6 @@ const STATUS_TONES = {
   draft: 'border-[#2B2B35] bg-[#0B0B0F] text-[#9A9AA5]',
   planning: 'border-[#8B5CF6]/40 bg-[#8B5CF6]/10 text-[#C4B5FD]',
   approved: 'border-[#34D399]/40 bg-[#34D399]/10 text-[#6EE7B7]',
-  rendered: 'border-[#34D399]/40 bg-[#34D399]/10 text-[#6EE7B7]',
 };
 
 function videoDuration(seconds) {
@@ -117,7 +116,7 @@ function CurrentProject({ draft, storyboard, video, loading, onNew }) {
   const href = draft?.id ? projectHref({ id: draft.id, storyboard: storyboard?.storyboard }) : null;
   const primaryHref = draft?.id && (hasVideo || reviewed) ? `/app/projects/${draft.id}/video` : href;
   const primaryLabel = hasVideo ? 'View video' : reviewed ? 'Open video step' : hasStoryboard ? 'Review storyboard' : 'Edit idea';
-  const state = hasVideo ? 'rendered' : reviewed ? 'approved' : hasStoryboard ? 'planning' : 'draft';
+  const state = hasVideo || reviewed ? 'approved' : hasStoryboard ? 'planning' : 'draft';
   const stateLabel = hasVideo ? 'Video ready' : reviewed ? 'Approved' : hasStoryboard ? 'Storyboard' : 'Brief';
 
   return (
@@ -256,7 +255,7 @@ function RecentProjectCard({ project, video }) {
   const hasVideo = Boolean(video);
   const reviewed = summary.state === 'approved' || hasVideo;
   const hasScenes = summary.sceneCount > 0;
-  const tone = hasVideo ? 'rendered' : reviewed ? 'approved' : hasScenes ? 'planning' : 'draft';
+  const tone = hasVideo || reviewed ? 'approved' : hasScenes ? 'planning' : 'draft';
   const label = hasVideo ? 'Video ready' : reviewed ? 'Approved' : hasScenes ? 'Storyboard' : 'Brief';
   const href = hasVideo ? `/app/projects/${project.id}/video` : projectHref(project);
 
