@@ -9,8 +9,6 @@ export default function StoryboardInspector({ project, stats, review, onApprove,
   const approved = review?.approved === true;
   const durationPercent = Math.min(100, Math.round((stats.totalSeconds / 90) * 100));
   const errorCount = stats.errors.length;
-  const hash = String(review?.storyboardHash || '');
-
   return (
     <aside className="space-y-4 xl:sticky xl:top-24 xl:self-start" aria-label="Storyboard inspector">
       <section className="studio-surface rounded-2xl border border-[#2B2B35] bg-[#141419] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
@@ -105,13 +103,6 @@ export default function StoryboardInspector({ project, stats, review, onApprove,
             : 'Review every scene, then approve this exact revision before generation can be wired in.'}
         </p>
 
-        <div className="mt-3 rounded-xl border border-[#2B2B35] bg-[#0E0E13] px-3.5 py-2.5">
-          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#8A8A96]">Revision hash</p>
-          <p className="mt-1 truncate font-mono text-[13px] text-[#C4B5FD]" title={hash || undefined}>
-            {hash ? hash.slice(0, 16) : 'Not approved yet'}
-          </p>
-        </div>
-
         <button
           type="button"
           onClick={onApprove}
@@ -139,9 +130,6 @@ export default function StoryboardInspector({ project, stats, review, onApprove,
           <span className="material-symbols-outlined text-[14px]" aria-hidden="true">edit_note</span>
           Edit idea
         </Link>
-        <p className="mt-3 border-t border-[#2B2B35] pt-3 text-[12px] leading-5 text-[#8A8A96]">
-          Storyboard saved. Footage generation, playback and downloads are not connected in this build.
-        </p>
       </section>
     </aside>
   );
