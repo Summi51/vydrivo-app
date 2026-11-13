@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "kind": "ai-generated-footage",
+  "video": "source.mp4",
+  "audio": "narration.wav",
+  "costINR": 0,
+  "freeAccessConfirmed": true,
+  "provenance": {
+    "provider": "REPLACE_WITH_ACTUAL_PROVIDER",
+    "model": "REPLACE_WITH_ACTUAL_MODEL",
+    "prompt": "REPLACE_WITH_APPROVED_PROMPT",
+    "requestId": "REPLACE_WITH_ACTUAL_REQUEST_ID"
+  },
+  "captions": [
+    {"start": 0, "end": 2, "text": "Replace with measured narration phrase."}
+  ]
+}
